@@ -1,9 +1,41 @@
 const PRODUCTS = {
-  apple: { name: "Apple", emoji: "🍏" },
-  banana: { name: "Banana", emoji: "🍌" },
-  lemon: { name: "Lemon", emoji: "🍋" },
-  strawberry: { name: "Strawberry", emoji: "🍓" },
+  apple: {
+    emoji: "🍏",
+    name: {
+      en: "Apple",
+      ja: "りんご"
+    }
+  },
+  banana: {
+    emoji: "🍌",
+    name: {
+      en: "Banana",
+      ja: "バナナ"
+    }
+  },
+  lemon: {
+    emoji: "🍋",
+    name: {
+      en: "Lemon",
+      ja: "レモン"
+    }
+  },
+  strawberry: {
+    emoji: "🍓",
+    name: {
+      en: "Strawberry",
+      ja: "いちご"
+    }
+  }
 };
+
+let currentLanguage = localStorage.getItem("lang") || "en";
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem("lang", lang);
+  renderBasket();
+}
 
 function getBasket() {
   try {
@@ -36,7 +68,11 @@ function renderBasket() {
 
   const productKeys = Object.keys(basket);
   if (productKeys.length === 0) {
-    basketList.innerHTML = "<li>No products in basket.</li>";
+    const emptyMessages = {
+  en: "No products in basket.",
+  ja: "バスケットに商品がありません。"
+};
+basketList.innerHTML = `<li>${emptyMessages[currentLanguage]}</li>`;
     if (cartButtonsRow) cartButtonsRow.style.display = "none";
     return;
   }
@@ -46,7 +82,7 @@ function renderBasket() {
     const quantity = basket[product];
     if (item && quantity > 0) {
       const li = document.createElement("li");
-      li.innerHTML = `<span class='basket-emoji'>${item.emoji}</span> <span>${quantity}x ${item.name}</span>`;
+      li.innerHTML = `<span class='basket-emoji'>${item.emoji}</span> <span>${quantity}x ${item.name[currentLanguage]}</span>`;
       basketList.appendChild(li);
     }
   });
