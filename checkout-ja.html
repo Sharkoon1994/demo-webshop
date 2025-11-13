@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>購入手続き - フルーツショップ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <div class="header-center">
+        <a href="index-ja.html" class="logo" aria-label="ホームページへ移動">
+          <img src="img/fruit-shop-logo.png" class="logo-img" alt="フルーツショップのロゴ" />
+          <span class="products-text"> 商品を見る </span>
+        </a>
+        <nav role="navigation" aria-label="メインナビゲーション">
+          <a href="basket-ja.html" class="basket-link" aria-label="買い物かごを見る">
+            <img src="img/basket-icon.png" class="basket-img" alt="買い物かごアイコン" />
+            <span class="basket-text">買い物かごを見る</span>
+          </a>
+        </nav>
+      </div>
+      <div class="language-switcher">
+        <a href="checkout.html" lang="en">English</a> |
+        <a href="checkout-ja.html" lang="ja">日本語</a>
+      </div>
+    </header>
+    <main id="main-content" role="main">
+      <div class="content-box">
+        <h1>購入手続き</h1>
+        <form id="checkoutForm" role="form" aria-label="購入フォーム">
+          <div class="form-group">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required aria-required="true" aria-label="お名前を入力してください" />
+          </div>
+          <div class="form-group">
+            <label for="address">住所:</label>
+            <input type="text" id="address" name="address" required aria-required="true" aria-label="お届け先住所を入力してください" />
+          </div>
+          <button type="submit" class="cart-action-btn" aria-label="注文を確定する">注文する</button>
+        </form>
+        <div id="successMsg" role="alert" aria-live="polite">ご注文ありがとうございます！</div>
+      </div>
+    </main>
+    <footer>
+      <a href="https://www.linkedin.com/in/timlolkema/" target="_blank" rel="noopener noreferrer">Tim Lolkemaより</a>
+    </footer>
+    <script src="shop.js"></script>
+    <script>
+      renderBasket();
+      document.getElementById("checkoutForm").onsubmit = function (e) {
+        e.preventDefault();
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("checkoutForm").style.display = "none";
+        clearBasket();
+        renderBasket();
+      };
+    </script>
+  </body>
+</html>
