@@ -29,7 +29,7 @@ const PRODUCTS = {
   }
 };
 
-let currentLanguage = localStorage.getItem("lang") || "en";
+let currentLanguage = document.documentElement.lang || "en";
 
 function setLanguage(lang) {
   currentLanguage = lang;
