@@ -45,8 +45,8 @@
           <button id="clearBasket" aria-label="Clear all items from basket">
             Clear Basket
           </button>
-          <button id="refreshBasket" aria-label="Refresh basket display">
-            Refresh Basket
+          <button id="reloadBasket" aria-label="Reload the page">
+            Reload Page
           </button>
           <a
             href="checkout.html"
@@ -74,8 +74,8 @@
         clearBasket();
         renderBasket();
       };
-        document.getElementById("refreshBasket").onclick = function () {
-        renderBasket();
+     document.getElementById("reloadBasket").onclick = function () {
+        location.reload();
       };
     </script>
   </body>
