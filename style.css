@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap");
 
+.language-switcher {
+  text-align: right;
+  margin: 10px 20px;
+  font-size: 0.9em;
+}
+
+.language-switcher a {
+  text-decoration: none;
+  margin: 0 5px;
+  color: #0077cc;
+}
+
+.language-switcher a:hover {
+  text-decoration: underline;
+}
+
 a {
   text-decoration: none;
   color: #000;

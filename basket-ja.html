@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>買い物かご - フルーツショップ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+       <!-- 言語切り替え -->
+      <div class="language-switcher">
+        <a href="basket.html" lang="en">English</a> |
+        <a href="basket-ja.html" lang="ja">日本語</a>
+      </div>
+    <header role="banner">
+      <div class="header-center">
+        <a href="index-ja.html" class="logo" aria-label="ホームページへ移動">
+          <img
+            src="img/fruit-shop-logo.png"
+            class="logo-img"
+            alt="フルーツショップのロゴ"
+          />
+          <span class="products-text"> 商品を見る </span>
+        </a>
+        <nav role="navigation" aria-label="メインナビゲーション">
+          <a
+            href="basket-ja.html"
+            class="basket-link"
+            aria-label="買い物かごを見る"
+          >
+            <img
+              src="img/basket-icon.png"
+              class="basket-img"
+              alt="買い物かごアイコン"
+            />
+            <span class="basket-text">買い物かごを見る</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main">
+      <div class="content-box">
+        <h1>あなたの買い物かご</h1>
+        <ul
+          class="order-list"
+          id="basketList"
+          aria-label="買い物かごの商品"
+        ></ul>
+        <div class="cart-buttons-row" role="group" aria-label="かごの操作">
+          <button id="clearBasket" aria-label="かごを空にする">
+            かごを空にする
+          </button>
+          <button id="reloadBasket" aria-label="ページを再読み込み">
+            ページを再読み込み
+          </button>
+          <a
+            href="checkout-ja.html"
+            id="checkoutLink"
+            aria-label="購入手続きへ進む"
+          >
+            <button id="checkoutBtn">購入手続き</button>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <a
+        href="https://www.linkedin.com/in/timlolkema/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tim Lolkemaより
+      </a>
+    </footer>
+
+    <script src="shop.js"></script>
+    <script>
+      renderBasket();
+      document.getElementById("clearBasket").onclick = function () {
+        clearBasket();
+        renderBasket();
+      };
+      document.getElementById("reloadBasket").onclick = function () {
+        location.reload();
+      };
+    </script>
+  </body>
+</html>

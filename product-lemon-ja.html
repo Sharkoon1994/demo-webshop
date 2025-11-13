@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新鮮なレモン - フルーツショップ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+        <div class="language-switcher">
+        <a href="product-lemon.html" lang="en">English</a> |
+        <a href="product-lemon-ja.html" lang="ja">日本語</a>
+      </div>
+    <header role="banner">
+      <div class="header-center">
+        <a href="index-ja.html" class="logo" aria-label="ホームページへ移動">
+          <img src="img/fruit-shop-logo.png" class="logo-img" alt="フルーツショップのロゴ" />
+          <span class="products-text"> 商品を見る </span>
+        </a>
+        <nav role="navigation" aria-label="メインナビゲーション">
+          <a href="basket-ja.html" class="basket-link" aria-label="買い物かごを見る">
+            <img src="img/basket-icon.png" class="basket-img" alt="買い物かごアイコン" />
+            <span class="basket-text">買い物かごを見る</span>
+          </a>
+        </nav>
+      </div>
+  
+    </header>
+    <main id="main-content" role="main">
+      <div class="content-box">
+        <div class="emoji-display" role="img" aria-label="レモンの絵文字">🍋</div>
+        <h1>レモン</h1>
+        <div class="product-desc" aria-label="商品説明">
+          人生がレモンをくれたら、ウェブサイトを作ろう。
+        </div>
+        <div class="button-container">
+          <button id="addToBasket" class="cart-action-btn" aria-label="レモンをかごに追加">
+            かごに追加
+          </button>
+          <a href="index-ja.html" aria-label="商品一覧に戻る">
+            <button class="cart-action-btn">商品一覧に戻る</button>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <a href="https://www.linkedin.com/in/timlolkema/" target="_blank" rel="noopener noreferrer">
+        Tim Lolkemaより
+      </a>
+    </footer>
+    <script src="shop.js"></script>
+    <script>
+      document.getElementById("addToBasket").onclick = function () {
+        addToBasket("lemon");
+      };
+    </script>
+  </body>
+</html>
